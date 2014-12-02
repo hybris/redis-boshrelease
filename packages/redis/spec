@@ -1,0 +1,7 @@
+---
+name: redis
+
+dependencies: []
+
+files:
+  - redis/redis-2.8.17.tar.gz
