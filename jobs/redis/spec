@@ -21,3 +21,11 @@ properties:
     default: "r3d!s"
   redis.master:
     description: IP address or hostname of the Redis master node
+  redis.appendonly:
+    description: Value to decide append each command to log or not
+    default: "no"
+  redis.snapshot_configs:
+    description: Redis configuraiton for snapshoting options
+    default: [""]
+
+
