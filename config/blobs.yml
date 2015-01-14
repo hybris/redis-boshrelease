@@ -1,5 +1,5 @@
 ---
-redis/redis-2.8.17.tar.gz:
+redis/redis-2.8.19.tar.gz:
   object_id: 87eaa71a-a2ab-4eb8-82b4-48a030b8bb74
   sha: 913479f9d2a283bfaadd1444e17e7bab560e5d1e
   size: 1234543

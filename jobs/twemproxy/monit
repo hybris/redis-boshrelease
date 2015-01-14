@@ -1,0 +1,11 @@
+check process twemproxy
+  with pidfile /var/vcap/sys/run/twemproxy/twemproxy.pid
+  start program "/var/vcap/jobs/twemproxy/bin/monit_debugger twemproxy_ctl '/var/vcap/jobs/twemproxy/bin/twemproxy_ctl start'"
+  stop program "/var/vcap/jobs/twemproxy/bin/monit_debugger twemproxy_ctl '/var/vcap/jobs/twemproxy/bin/twemproxy_ctl stop'"
+  group vcap
+
+check process smitty
+  with pidfile /var/vcap/sys/run/smitty/smitty.pid
+  start program "/var/vcap/jobs/twemproxy/bin/monit_debugger smitty_ctl '/var/vcap/jobs/twemproxy/bin/smitty_ctl start'"
+  stop program "/var/vcap/jobs/twemproxy/bin/monit_debugger smitty_ctl '/var/vcap/jobs/twemproxy/bin/smitty_ctl stop'"
+  group vcap

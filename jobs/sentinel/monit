@@ -1,0 +1,5 @@
+check process sentinel
+  with pidfile /var/vcap/sys/run/sentinel/sentinel.pid
+  start program "/var/vcap/jobs/sentinel/bin/monit_debugger sentinel_ctl '/var/vcap/jobs/sentinel/bin/sentinel_ctl start'"
+  stop program "/var/vcap/jobs/sentinel/bin/monit_debugger sentinel_ctl '/var/vcap/jobs/sentinel/bin/sentinel_ctl stop'"
+  group vcap
