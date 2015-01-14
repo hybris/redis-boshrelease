@@ -1,0 +1,37 @@
+---
+name: sentinel
+
+templates:
+   bin/sentinel_ctl: bin/sentinel_ctl
+   bin/monit_debugger: bin/monit_debugger
+   data/properties.sh.erb: data/properties.sh
+   helpers/ctl_setup.sh: helpers/ctl_setup.sh
+   helpers/ctl_utils.sh: helpers/ctl_utils.sh
+   config/sentinel.conf.erb: config/sentinel.conf
+
+packages:
+  - sentinel
+
+properties:
+  sentinel.port:
+    description: The port that this sentinel instance will run on
+    default: 26379
+  sentinel.down_after_milliseconds:
+    description: Number of milliseconds the master (or any attached slave or sentinel) should be unreachable in milliseconds
+    default: 30000
+  sentinel.parallel_syncs:
+    description: How many slaves we can reconfigure to point to the new slave simultaneously during the failover
+    default: 1
+  sentinel.failover_timeout:
+    description: The time needed to re-start a failover in milliseconds
+    default: 180000
+  sentinel.quorum:
+    description: Number of sentinels to agree if master node is down.
+    default: 1
+  sentinel.masters:
+    description: redis master to be monitored by senintel <master-name> <ip> <redis-port>
+    default: ["mymaster 127.0.0.1 6379"]
+
+
+
+

@@ -1,0 +1,12 @@
+redis_cluster:
+    auto_eject_hosts: true
+    distribution: ketama
+    hash: fnv1a_64
+    listen: <%= p("twemproxy.host") %>:<%= p("twemproxy.port") %>
+    preconnect: true
+    redis: true
+    servers:
+        <% p("twemproxy.redis_servers").each do |server|%>
+            -  <%= server %>
+        <% end %>
+

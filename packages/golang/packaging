@@ -1,0 +1,23 @@
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+
+export HOME=/var/vcap
+
+tar xzf golang/go1.4.src.tar.gz
+
+cd go/src
+
+./all.bash
+
+cd ../..
+
+cp -R go/* ${BOSH_INSTALL_TARGET}
+
+export GOROOT=${BOSH_INSTALL_TARGET}
+export PATH=$PATH:$GOROOT/bin
+
+
+
+
+
+
