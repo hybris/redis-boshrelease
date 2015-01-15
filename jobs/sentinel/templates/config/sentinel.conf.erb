@@ -2,17 +2,15 @@ daemonize yes
 
 pidfile /var/vcap/sys/run/sentinel/sentinel.pid
 
-
 # port <sentinel-port>
 # The port that this sentinel instance will run on
 port <%= p("sentinel.port") %>
 
-loglevel notice
+#loglevel notice
 
 logfile /var/vcap/sys/log/sentinel/sentinel.log
 
-maxclients 100
-
+#maxclients 100
 
 
 <% p("sentinel.masters").each do |masters|%>

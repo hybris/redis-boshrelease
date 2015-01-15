@@ -5,7 +5,7 @@ check process twemproxy
   group vcap
 
 check process smitty
-  with pidfile /var/vcap/sys/run/smitty/smitty.pid
+  with pidfile /var/vcap/sys/run/twemproxy/smitty.pid
   start program "/var/vcap/jobs/twemproxy/bin/monit_debugger smitty_ctl '/var/vcap/jobs/twemproxy/bin/smitty_ctl start'"
   stop program "/var/vcap/jobs/twemproxy/bin/monit_debugger smitty_ctl '/var/vcap/jobs/twemproxy/bin/smitty_ctl stop'"
   group vcap
