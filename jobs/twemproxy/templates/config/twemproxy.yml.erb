@@ -2,8 +2,11 @@ redis_cluster:
     auto_eject_hosts: true
     distribution: ketama
     hash: fnv1a_64
+    server_retry_timeout: 30000
+    server_failure_limit: 3
     listen: <%= p("twemproxy.host") %>:<%= p("twemproxy.port") %>
     preconnect: true
+    timeout: 400
     redis: true
     servers:
         <% p("twemproxy.redis_servers").each do |server|%>
