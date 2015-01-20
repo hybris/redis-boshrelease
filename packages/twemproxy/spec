@@ -1,0 +1,9 @@
+---
+name: twemproxy
+
+dependencies:
+  - golang
+  - smitty
+
+files:
+  - twemproxy/nutcracker-0.4.0.tar.gz

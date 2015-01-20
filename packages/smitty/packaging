@@ -1,0 +1,24 @@
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+
+export HOME=/var/vcap
+
+tar -xzvf smitty/gosmitty.tar.gz
+
+cd gosmitty
+
+mkdir -p ${BOSH_INSTALL_TARGET}/src
+
+mv * ${BOSH_INSTALL_TARGET}/src
+cd ${BOSH_INSTALL_TARGET}/src/smitty
+
+export GOPATH=${BOSH_INSTALL_TARGET}
+export GOROOT=/var/vcap/packages/golang
+export PATH=$PATH:$GOROOT/bin
+
+go build
+
+
+
+
+

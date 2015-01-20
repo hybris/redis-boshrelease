@@ -1,0 +1,8 @@
+---
+name: smitty
+
+dependencies:
+  - golang
+
+files:
+  - smitty/gosmitty.tar.gz

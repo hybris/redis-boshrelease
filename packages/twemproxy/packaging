@@ -1,0 +1,18 @@
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+#set -x
+
+export HOME=/var/vcap
+
+tar xfv twemproxy/nutcracker-0.4.0.tar.gz
+
+cd nutcracker-0.4.0
+
+CFLAGS="-ggdb3 -O0"  ./configure --prefix=${BOSH_INSTALL_TARGET} --enable-debug=full
+
+make
+
+make install
+
+
+

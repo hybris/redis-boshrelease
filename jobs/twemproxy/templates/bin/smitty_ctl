@@ -1,0 +1,35 @@
+#!/bin/bash
+
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+
+JOB_NAME=smitty
+RUN_DIR=/var/vcap/sys/run/twemproxy
+PIDFILE=$RUN_DIR/smitty.pid
+
+
+case $1 in
+
+  start)
+
+    # store pid in $PIDFILE
+    echo $$ > $PIDFILE
+
+    exec chpst -u vcap:vcap /var/vcap/packages/smitty/src/smitty/smitty -c /var/vcap/jobs/twemproxy/config/smitty.yml
+
+    ;;
+
+   stop)
+
+    kill -9 `cat $PIDFILE`
+
+    rm -f $PIDFILE
+
+    ;;
+  *)
+    echo "Usage: smitty {start|stop}"
+
+    ;;
+
+esac
+exit 0
