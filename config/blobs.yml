@@ -1,5 +1,18 @@
 ---
 redis/redis-2.8.19.tar.gz:
-  object_id: 87eaa71a-a2ab-4eb8-82b4-48a030b8bb74  #need to be changed
-  sha: 913479f9d2a283bfaadd1444e17e7bab560e5d1e  #need to be changed
+  object_id: 704ed4d7-57e6-477a-9068-8ba50b67f042
+  sha: 3e362f4770ac2fdbdce58a5aa951c1967e0facc8
   size: 1254857
+twemproxy/nutcracker-0.4.0.tar.gz:
+  object_id: 18abbcc3-b7ac-4c4b-906c-7bb0c3514ba7
+  sha: 06d1ea33f025f28789c013eeb2cf13910b174d12
+  size: 1842321
+smitty/gosmitty.tar.gz:
+  object_id: dcd661e1-969e-4e72-a879-93a9c091677c
+  sha: c34b141c9474b7e14783d54a667262c549a4e179
+  size: 2188916
+golang/go1.4.src.tar.gz:
+  object_id: 1b1d5884-edde-4fc6-b103-12805ef5c2a8
+  sha: 6a7d9bd90550ae1e164d7803b3e945dc8309252b
+  size: 10911274
+
