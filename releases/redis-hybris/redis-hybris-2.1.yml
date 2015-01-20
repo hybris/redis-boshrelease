@@ -44,4 +44,4 @@ jobs:
 commit_hash: '99782615'
 uncommitted_changes: true
 name: redis-hybris
-version: '2.0'
+version: '2.1'
