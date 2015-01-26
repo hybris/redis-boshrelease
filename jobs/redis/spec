@@ -27,5 +27,28 @@ properties:
   redis.snapshot_configs:
     description: Redis configuraiton for snapshoting options
     default: [""]
+  redis.rdbcompression:
+    description: Compress string objects using LZF when dump .rdb databases?
+    default: yes
+  redis.slave_read_only:
+    description: You can configure a slave instance to accept writes or not
+    default: yes
+  redis.slave_priority:
+    description: The slave priority is an integer number published by Redis in the INFO output
+    default: 100
+  redis.appendfsync:
+    description: The fsync() call tells the Operating System to actually write data on disk instead to wait for more data in the output buffer
+    default: everysec
+  redis.no_appendfsync_on_rewrite:
+    description: Append options in case of write
+    default: no
+  redis.auto_aof_rewrite_percentage:
+    description: Automatic rewrite of the append only file
+    default: 100
+  redis.auto_aof_rewrite_min_size:
+    description: Automatic rewrite of the append only file
+    default: 64mb
+
+
 
 
