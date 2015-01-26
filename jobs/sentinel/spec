@@ -43,9 +43,6 @@ properties:
   sentinel.latency_monitor_threshold:
     description: More details can be found at The Redis latency monitoring subsystem.
     default: 0
-  sentinel.notify_keyspace_events:
-    description: Redis can notify Pub/Sub clients about events happening in the key space.
-    default: ""
 
 
 
