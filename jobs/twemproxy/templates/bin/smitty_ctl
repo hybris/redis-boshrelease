@@ -15,7 +15,7 @@ case $1 in
     # store pid in $PIDFILE
     echo $$ > $PIDFILE
 
-    exec chpst -u vcap:vcap /var/vcap/packages/smitty/src/smitty/smitty -c /var/vcap/jobs/twemproxy/config/smitty.yml
+    exec /var/vcap/packages/smitty/src/smitty/smitty -c /var/vcap/jobs/twemproxy/config/smitty.yml
 
     ;;
 

@@ -2,7 +2,6 @@ check process twemproxy
   with pidfile /var/vcap/sys/run/twemproxy/twemproxy.pid
   start program "/var/vcap/jobs/twemproxy/bin/monit_debugger twemproxy_ctl '/var/vcap/jobs/twemproxy/bin/twemproxy_ctl start'"
   stop program "/var/vcap/jobs/twemproxy/bin/monit_debugger twemproxy_ctl '/var/vcap/jobs/twemproxy/bin/twemproxy_ctl stop'"
-  restart program "/var/vcap/jobs/twemproxy/bin/monit_debugger twemproxy_ctl '/var/vcap/jobs/twemproxy/bin/twemproxy_ctl restart'"
   group vcap
 
 check process smitty
