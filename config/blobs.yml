@@ -1,8 +1,4 @@
 ---
-redis/redis-2.8.19.tar.gz:
-  object_id: 704ed4d7-57e6-477a-9068-8ba50b67f042
-  sha: 3e362f4770ac2fdbdce58a5aa951c1967e0facc8
-  size: 1254857
 twemproxy/nutcracker-0.4.0.tar.gz:
   object_id: 18abbcc3-b7ac-4c4b-906c-7bb0c3514ba7
   sha: 06d1ea33f025f28789c013eeb2cf13910b174d12
@@ -15,4 +11,7 @@ golang/go1.4.src.tar.gz:
   object_id: 1b1d5884-edde-4fc6-b103-12805ef5c2a8
   sha: 6a7d9bd90550ae1e164d7803b3e945dc8309252b
   size: 10911274
-
+redis/redis-2.8.19.tar.gz:
+  object_id: a647772f-832a-4d78-bbe1-932767d3d665
+  sha: 3e362f4770ac2fdbdce58a5aa951c1967e0facc8
+  size: 1254857
