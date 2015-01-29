@@ -31,7 +31,18 @@ properties:
   sentinel.masters:
     description: redis master to be monitored by senintel <master-name> <ip> <redis-port>
     default: ["mymaster 127.0.0.1 6379"]
-
+  sentinel.lua_time_limit:
+    description: Max execution time of a Lua script in milliseconds
+    default: 5000
+  sentinel.slowlog_log_slower_than:
+    description: The Redis Slow Log is a system to log queries that exceeded a specified execution time.
+    default: 10000
+  sentinel.slowlog_max_len:
+    description: There is no limit to this length. Just be aware that it will consume memory.
+    default: 128
+  sentinel.latency_monitor_threshold:
+    description: More details can be found at The Redis latency monitoring subsystem.
+    default: 0
 
 
 

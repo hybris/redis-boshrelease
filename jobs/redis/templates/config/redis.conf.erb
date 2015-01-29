@@ -162,7 +162,7 @@ stop-writes-on-bgsave-error yes
 # For default that's set to 'yes' as it's almost always a win.
 # If you want to save some CPU in the saving child set it to 'no' but
 # the dataset will likely be bigger if you have compressible values or keys.
-rdbcompression yes
+rdbcompression <%= p("redis.rdbcompression") %>
 
 # Since version 5 of RDB a CRC64 checksum is placed at the end of the file.
 # This makes the format more resistant to corruption but there is a performance
@@ -240,7 +240,7 @@ slave-serve-stale-data yes
 # such as CONFIG, DEBUG, and so forth. To a limited extent you can improve
 # security of read only slaves using 'rename-command' to shadow all the
 # administrative / dangerous commands.
-slave-read-only yes
+slave-read-only <%= p("redis.slave_read_only") %>
 
 # Slaves send PINGs to server in a predefined interval. It's possible to change
 # this interval with the repl_ping_slave_period option. The default value is 10
@@ -310,7 +310,7 @@ repl-disable-tcp-nodelay no
 # Redis Sentinel for promotion.
 #
 # By default the priority is 100.
-slave-priority 100
+slave-priority <%= p("redis.slave_priority") %>
 
 # It is possible for a master to stop accepting writes if there are less than
 # N slaves connected, having a lag less or equal than M seconds.
@@ -486,7 +486,7 @@ appendfilename "appendonly.aof"
 # If unsure, use "everysec".
 
 # appendfsync always
-appendfsync everysec
+appendfsync <%= p("redis.appendfsync") %>
 # appendfsync no
 
 # When the AOF fsync policy is set to always or everysec, and a background
@@ -507,7 +507,7 @@ appendfsync everysec
 #
 # If you have latency problems turn this to "yes". Otherwise leave it as
 # "no" that is the safest pick from the point of view of durability.
-no-appendfsync-on-rewrite no
+no-appendfsync-on-rewrite <%= p("redis.no_appendfsync_on_rewrite") %>
 
 # Automatic rewrite of the append only file.
 # Redis is able to automatically rewrite the log file implicitly calling
@@ -526,8 +526,8 @@ no-appendfsync-on-rewrite no
 # Specify a percentage of zero in order to disable the automatic AOF
 # rewrite feature.
 
-auto-aof-rewrite-percentage 100
-auto-aof-rewrite-min-size 64mb
+auto-aof-rewrite-percentage  <%= p("redis.auto_aof_rewrite_percentage") %>
+auto-aof-rewrite-min-size  <%= p("redis.auto_aof_rewrite_min_size") %>
 
 # An AOF file may be found to be truncated at the end during the Redis
 # startup process, when the AOF data gets loaded back into memory.
@@ -782,3 +782,11 @@ hz 10
 # in order to commit the file to the disk more incrementally and avoid
 # big latency spikes.
 aof-rewrite-incremental-fsync yes
+
+
+#This are commands should not be called
+
+rename-command FLUSHDB FLUSHDB_HYBRISPREDICTORDONTDOIT0112358
+
+rename-command FLUSHALL FLUSHALL_HYBRISPREDICTORDONTDOIT132134
+
