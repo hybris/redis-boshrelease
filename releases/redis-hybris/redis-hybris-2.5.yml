@@ -1,0 +1,47 @@
+---
+packages:
+- name: golang
+  version: a4f7826317a069d9bde90fe9899ca710383b7c31
+  sha1: 7dcf80cc3f6380ac85d87d9a87656736b0a27628
+  fingerprint: a4f7826317a069d9bde90fe9899ca710383b7c31
+  dependencies: []
+- name: redis
+  version: 437a580c415e75b40865bfbd073c6b2bd2027209
+  sha1: 6be3ab143a64e86e356346fd0576cebf9a40d357
+  fingerprint: 437a580c415e75b40865bfbd073c6b2bd2027209
+  dependencies: []
+- name: sentinel
+  version: 437a580c415e75b40865bfbd073c6b2bd2027209
+  sha1: d1cb1e6fdf3c7e67be5745cd258af66407443a89
+  fingerprint: 437a580c415e75b40865bfbd073c6b2bd2027209
+  dependencies: []
+- name: smitty
+  version: c3015a212551067c6d2503baa5b158425cb7866f
+  sha1: da27170063eb0faf0e02ac9d2bfb41159514d572
+  fingerprint: c3015a212551067c6d2503baa5b158425cb7866f
+  dependencies:
+  - golang
+- name: twemproxy
+  version: 9b0ead53d37fb819586488f2eef1d3503ab838fa
+  sha1: 2310a972a3c6bfb930cf2547f966845ba1b09934
+  fingerprint: 9b0ead53d37fb819586488f2eef1d3503ab838fa
+  dependencies:
+  - golang
+  - smitty
+jobs:
+- name: redis
+  version: 30aad0b8264805492ac8d83213731963d293a3fb
+  fingerprint: 30aad0b8264805492ac8d83213731963d293a3fb
+  sha1: b5f407385728d81516345095ca2d777f3982814e
+- name: sentinel
+  version: 9afa43e87bc457fc8c40c80163f074a61dfe04cb
+  fingerprint: 9afa43e87bc457fc8c40c80163f074a61dfe04cb
+  sha1: 0e2dcbff83002af7667bccf5c998d0d2600a8604
+- name: twemproxy
+  version: 8539442277dc556da8dfdcb9712db34c36f67ed3
+  fingerprint: 8539442277dc556da8dfdcb9712db34c36f67ed3
+  sha1: 6b3361201ca45be46913e2f1514d0470fd4ddd04
+commit_hash: 3eed81ed
+uncommitted_changes: true
+name: redis-hybris
+version: '2.5'
