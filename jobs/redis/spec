@@ -13,6 +13,12 @@ packages:
   - redis
 
 properties:
+  redis.max_open_files:
+    description: The maximum number of open file descriptors
+    default: 64000
+  redis.tcp-backlog:
+    description:
+    default: 511
   redis.port:
     description: Port to listen for requests to redis server
     default: 6379
@@ -48,7 +54,3 @@ properties:
   redis.auto_aof_rewrite_min_size:
     description: Automatic rewrite of the append only file
     default: "64mb"
-
-
-
-
