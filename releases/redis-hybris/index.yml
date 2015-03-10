@@ -14,4 +14,6 @@ builds:
     version: '2.3'
   b53bcf41-16b0-4abc-8ac3-bd9e2144d95d:
     version: '2.4'
+  f7fd8642-22d4-406d-ba31-b53af33c941c:
+    version: '2.5'
 format-version: '2'
