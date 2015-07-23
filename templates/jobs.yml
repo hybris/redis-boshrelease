@@ -9,24 +9,15 @@ update:
   serial: false
 
 jobs:
-  - name: redis_leader_z1
-    template: redis
-    instances: 0
+  - name: redis
+    templates:
+    - name: redis
+      release: redis-hybris
+    instances: 1
+    persistent_disk: 0
     resource_pool: small_z1
     networks: (( merge ))
-    persistent_disk: 0
     properties: {}
-  - name: redis_z1
-    template: redis
-    instances: 0
-    resource_pool: small_z1
-    networks: (( merge ))
-    persistent_disk: 0
-    update:
-      canaries: 10
-    properties:
-      redis:
-        leader_address: (( merge ))
 
 networks: (( merge ))
 
