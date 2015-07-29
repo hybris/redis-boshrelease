@@ -134,7 +134,7 @@ resources:
     bucket: {{pipeline-aws-bucket}}
     access_key_id: {{pipeline-aws-access-key-id}}
     secret_access_key: {{pipeline-aws-secret-access-key}}
-    initial_version: 1.0.0
+    initial_version: 0.0.0
 
 - name: git-redis-boshrelease
   type: git
