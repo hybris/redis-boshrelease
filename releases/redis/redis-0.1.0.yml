@@ -1,0 +1,78 @@
+---
+packages:
+- name: golang
+  version: !binary |-
+    YTRmNzgyNjMxN2EwNjlkOWJkZTkwZmU5ODk5Y2E3MTAzODNiN2MzMQ==
+  fingerprint: !binary |-
+    YTRmNzgyNjMxN2EwNjlkOWJkZTkwZmU5ODk5Y2E3MTAzODNiN2MzMQ==
+  sha1: !binary |-
+    ZWIyM2Q3ZjY2Y2I2ZTQ3MGY3YjYzNjJkYThiYjVmZGZlMzlkZmVhMQ==
+  dependencies: []
+- name: redis
+  version: !binary |-
+    NDJlMjA0ZTEyYjY1OWM4NGNkNDA4OGFiYjU4OGJmMmIzNDYwYWE5Yw==
+  fingerprint: !binary |-
+    NDJlMjA0ZTEyYjY1OWM4NGNkNDA4OGFiYjU4OGJmMmIzNDYwYWE5Yw==
+  sha1: !binary |-
+    NzYyMTc1ZDVlOWU1Njc2OTZiZmE4Y2E5YmQxMTNmN2M2M2Q2OWI2Mw==
+  dependencies: []
+- name: sentinel
+  version: !binary |-
+    NDJlMjA0ZTEyYjY1OWM4NGNkNDA4OGFiYjU4OGJmMmIzNDYwYWE5Yw==
+  fingerprint: !binary |-
+    NDJlMjA0ZTEyYjY1OWM4NGNkNDA4OGFiYjU4OGJmMmIzNDYwYWE5Yw==
+  sha1: !binary |-
+    NzYyMTc1ZDVlOWU1Njc2OTZiZmE4Y2E5YmQxMTNmN2M2M2Q2OWI2Mw==
+  dependencies: []
+- name: smitty
+  version: !binary |-
+    YzMwMTVhMjEyNTUxMDY3YzZkMjUwM2JhYTViMTU4NDI1Y2I3ODY2Zg==
+  fingerprint: !binary |-
+    YzMwMTVhMjEyNTUxMDY3YzZkMjUwM2JhYTViMTU4NDI1Y2I3ODY2Zg==
+  sha1: !binary |-
+    YzViMGI5ZWY1OTA0ZmU0NzA4OTk1YWVlZmJlMmMyNWViMDczNTY4Zg==
+  dependencies:
+  - golang
+- name: twemproxy
+  version: !binary |-
+    OWIwZWFkNTNkMzdmYjgxOTU4NjQ4OGYyZWVmMWQzNTAzYWI4MzhmYQ==
+  fingerprint: !binary |-
+    OWIwZWFkNTNkMzdmYjgxOTU4NjQ4OGYyZWVmMWQzNTAzYWI4MzhmYQ==
+  sha1: !binary |-
+    MDQ0ZWI5OTRiNDY1Yzc4MjZjM2NmOThjOWMxYWYyODI0NDlhODA3MQ==
+  dependencies:
+  - golang
+  - smitty
+jobs:
+- name: redis
+  version: !binary |-
+    NzM2ZWY0NDY1ZmMzOWM2OGIwYmE2MTQ5MTQ0MjAzODkxNTcyMWFiZA==
+  fingerprint: !binary |-
+    NzM2ZWY0NDY1ZmMzOWM2OGIwYmE2MTQ5MTQ0MjAzODkxNTcyMWFiZA==
+  sha1: !binary |-
+    NzA4ODc5YTI4ZmI1N2QzNGMzNWM3MDdjNTcwZmM1MmViZTI4NjM3YQ==
+- name: sentinel
+  version: !binary |-
+    ZGFjOWM0ZTUyNmM5NDI1MTI2YmVhNGIzYzU1M2Q3ZGFjOGEzZDQyOA==
+  fingerprint: !binary |-
+    ZGFjOWM0ZTUyNmM5NDI1MTI2YmVhNGIzYzU1M2Q3ZGFjOGEzZDQyOA==
+  sha1: !binary |-
+    M2Q1MDEzYmY0MTM0ZGNkYTZjZmY5M2JiMDFhNzY5ZjYzYjk2M2ZhMw==
+- name: twemproxy
+  version: !binary |-
+    NzgwZThlNDNiMWQ5ZTllZWQ3M2E2MzgzNTBmODhhNmU4NmRmODcyNA==
+  fingerprint: !binary |-
+    NzgwZThlNDNiMWQ5ZTllZWQ3M2E2MzgzNTBmODhhNmU4NmRmODcyNA==
+  sha1: !binary |-
+    MzEyOTEzNTc1NjY0MGRiZjNkNjY2MTBkOTRlNTBjYWJkNTY0N2Q3Mg==
+license:
+  version: !binary |-
+    NTY5YTQ4MTY2M2Y5NWIxMGNiODAzNTM5YmE2MWE4YzI0YTg4MTQ2Mw==
+  fingerprint: !binary |-
+    NTY5YTQ4MTY2M2Y5NWIxMGNiODAzNTM5YmE2MWE4YzI0YTg4MTQ2Mw==
+  sha1: !binary |-
+    NjUzNjg3N2JlMTc3NmQ0YTZjOTczZWU1Mzg3Njg2OTAyOTc1YTlhYw==
+commit_hash: e1e74fec
+uncommitted_changes: false
+name: redis
+version: 0.1.0
