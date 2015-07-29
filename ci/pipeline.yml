@@ -124,7 +124,7 @@ jobs:
         name: create-final-release/redis-boshrelease/release/name
         tag: create-final-release/redis-boshrelease/release/tag
         body: create-final-release/redis-boshrelease/release/notes.md
-        globs: [create-final-release/redis-boshrelease/releases/redis-hybris/redis-*.tgz]
+        globs: [create-final-release/redis-boshrelease/releases/redis/redis-*.tgz]
 
 resources:
 - name: version
