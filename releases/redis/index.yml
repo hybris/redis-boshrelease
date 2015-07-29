@@ -2,4 +2,6 @@
 builds:
   fed0018e-4d51-4eed-871d-d08e70eede87:
     version: 1.1.0
+  7e2ee52d-ad9f-41fc-a9d8-b0381945f3c6:
+    version: 1.2.0
 format-version: '2'
