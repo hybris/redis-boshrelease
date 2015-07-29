@@ -3,8 +3,8 @@ set -u # report the usage of uninitialized variables
 
 export HOME=/var/vcap
 
-tar xfv redis/redis-2.8.19.tar.gz
+tar xfv redis/redis-3.0.3.tar.gz
 
-cd redis-2.8.19
+cd redis-3.0.3
 
 make PREFIX=${BOSH_INSTALL_TARGET} install

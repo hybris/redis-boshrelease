@@ -118,7 +118,7 @@ jobs:
     - put: version
       params: {file: version/number}
     - put: final-release
-      params: {from: create-final-release/redis-boshrelease/releases/redis-hybris/redis-(.*).tgz}
+      params: {from: create-final-release/redis-boshrelease/releases/redis/redis-(.*).tgz}
     - put: github-final-release
       params:
         name: create-final-release/redis-boshrelease/release/name
@@ -167,7 +167,7 @@ resources:
 - name: final-release
   type: s3
   source:
-    bucket: {{pipeline-aws-bucket}}
+    bucket: {{boshrelease-aws-bucket}}
     regexp: redis-(.*).tgz
-    access_key_id: {{pipeline-aws-access-key-id}}
-    secret_access_key: {{pipeline-aws-secret-access-key}}
+    access_key_id: {{boshrelease-aws-access-key-id}}
+    secret_access_key: {{boshrelease-aws-secret-access-key}}

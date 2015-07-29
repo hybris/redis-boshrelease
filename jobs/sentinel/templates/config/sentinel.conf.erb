@@ -31,8 +31,6 @@ sentinel failover-timeout <%= master %>  <%= p("sentinel.failover_timeout") %>
 
 <% end %>
 
-
-
 # sentinel announce-ip <ip>
 # sentinel announce-port <port>
 #
@@ -54,6 +52,20 @@ sentinel failover-timeout <%= master %>  <%= p("sentinel.failover_timeout") %>
 # Example:
 #
 # sentinel announce-ip 1.2.3.4
+sentinel announce-ip <%=
+  networks = spec.networks.marshal_dump
+  network = networks.find do |_name, network_spec|
+  	next unless _name == :elastic
+  	network_spec
+  end
+  if !network
+      raise "Could not determine elastic IP via network spec: #{networks}"
+  end
+  if !network
+    network = spec.networks.marshal_dump.first
+  end
+  network[1].ip
+%>
 
 # dir <working-directory>
 # Every long running process should have a well-defined working directory.
@@ -165,7 +177,7 @@ dir /var/vcap/store/sentinel/
 # NOTIFICATION SCRIPT
 #
 # sentinel notification-script <master-name> <script-path>
-# 
+#
 # Call the specified notification script for any sentinel event that is
 # generated in the WARNING level (for instance -sdown, -odown, and so forth).
 # This script should notify the system administrator via email, SMS, or any
@@ -189,14 +201,14 @@ dir /var/vcap/store/sentinel/
 # When the master changed because of a failover a script can be called in
 # order to perform application-specific tasks to notify the clients that the
 # configuration has changed and the master is at a different address.
-# 
+#
 # The following arguments are passed to the script:
 #
 # <master-name> <role> <state> <from-ip> <from-port> <to-ip> <to-port>
 #
 # <state> is currently always "failover"
 # <role> is either "leader" or "observer"
-# 
+#
 # The arguments from-ip, from-port, to-ip, to-port are used to communicate
 # the old address of the master and the new address of the elected slave
 # (now a master).
@@ -315,5 +327,3 @@ latency-monitor-threshold  <%= p("sentinel.latency_monitor_threshold") %>
 #  this feature and the feature has some overhead. Note that if you don't
 #  specify at least one of K or E, no events will be delivered.
 notify-keyspace-events ""
-
-

@@ -211,7 +211,9 @@ slaveof <%= master %> <%= port %>
 # starting the replication synchronization process, otherwise the master will
 # refuse the slave request.
 #
-# masterauth <master-password>
+<% if_p("redis.password") do %>
+masterauth <%= p("redis.password") %>
+<% end %>
 
 # When a slave loses its connection with the master, or when the replication
 # is still in progress, the slave can act in two different ways:
@@ -347,7 +349,9 @@ slave-priority <%= p("redis.slave_priority") %>
 # 150k passwords per second against a good box. This means that you should
 # use a very strong password otherwise it will be very easy to break.
 #
-# requirepass foobared
+<% if_p("redis.password") do %>
+requirepass <%= p("redis.password") %>
+<% end %>
 
 # Command renaming.
 #
@@ -783,6 +787,29 @@ hz 10
 # big latency spikes.
 aof-rewrite-incremental-fsync yes
 
+## Cluster configuration
+
+# cluster-config-file <filename>: Note that despite the name of this option,
+# this is not an user editable configuration file, but the file where a Redis
+# Cluster node automatically persists the cluster configuration (the state,
+# basically) every time there is a change, in order to be able to re-read it
+# at startup. The file lists things like the other nodes in the cluster, their state,
+# persistent variables, and so forth. Often this file is rewritten and flushed
+# on disk as a result of some message reception.
+cluster-config-file nodes.conf
+
+# cluster-node-timeout <milliseconds>: The maximum amount of time a Redis Cluster
+# node can be unavailable, without it being considered as failing.
+# If a master node is not reachable for more than the
+# specified amount of time, it will be failed over by its slaves. This parameter
+# controls other important things in Redis Cluster. Notably, every node that can't
+# reach the majority of master nodes for the specified amount of time, will stop
+# accepting queries.
+cluster-node-timeout <%= p("redis.cluster_node_timeout") %>
+
+# cluster-enabled <yes/no>: If yes enables Redis Cluster support in a specific
+# Redis instance. Otherwise the instance starts as a stand alone instance as usually.
+cluster-enabled <%= p("redis.cluster_enabled") %>
 
 #This are commands should not be called
 

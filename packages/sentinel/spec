@@ -4,4 +4,4 @@ name: sentinel
 dependencies: []
 
 files:
-  - redis/redis-2.8.19.tar.gz
+  - redis/redis-3.0.3.tar.gz

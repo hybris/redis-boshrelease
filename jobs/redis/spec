@@ -23,8 +23,7 @@ properties:
     description: Port to listen for requests to redis server
     default: 6379
   redis.password:
-    description: Password to access redis server
-    default: "r3d!s"
+    description: Optional password to access redis server. If set, forces clients to authenticate.
   redis.master:
     description: IP address or hostname of the Redis master node
   redis.appendonly:
@@ -54,3 +53,9 @@ properties:
   redis.auto_aof_rewrite_min_size:
     description: Automatic rewrite of the append only file
     default: "64mb"
+  redis.cluster_enabled:
+    description: If yes enables Redis Cluster support in a specific Redis instance. Otherwise the instance starts as a stand alone instance as usually.
+    default: "no"
+  redis.cluster_node_timeout:
+    description: The maximum amount of time a Redis Cluster node can be unavailable, without it being considered as failing.
+    default: 5000

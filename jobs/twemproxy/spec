@@ -2,7 +2,7 @@
 name: twemproxy
 
 templates:
-   bin/twemproxy_ctl: bin/twemproxy_ctl
+   bin/twemproxy_ctl.erb: bin/twemproxy_ctl
    bin/smitty_ctl: bin/smitty_ctl
    bin/monit_debugger: bin/monit_debugger
    data/properties.sh.erb: data/properties.sh
@@ -14,8 +14,6 @@ templates:
 packages:
   - twemproxy
   - smitty
-
-
 
 properties:
   twemproxy.host:
@@ -33,7 +31,6 @@ properties:
   twemproxy.sentinel_port:
     description: port of sentinel which monitors redis masters
     default: 26379
-
-
-
-
+  twemproxy.verbosity:
+    description: verbosity of twemproxy (min 0, max 11)
+    default: 0

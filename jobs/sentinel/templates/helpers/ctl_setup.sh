@@ -79,3 +79,6 @@ done
 PIDFILE=$RUN_DIR/$JOB_NAME.pid
 
 echo '$PATH' $PATH
+
+# sentinel need to change conf file on the fly
+chmod 666 $JOB_DIR/config/sentinel.conf

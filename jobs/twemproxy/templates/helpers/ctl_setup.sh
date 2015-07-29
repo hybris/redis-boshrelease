@@ -25,7 +25,7 @@ chmod 755 $JOB_DIR # to access file via symlink
 source $JOB_DIR/data/properties.sh
 
 # give write access twemproxy config file
-chmod 777 $JOB_DIR/config/twemproxy.yml
+chmod 666 $JOB_DIR/config/twemproxy.yml
 
 source $JOB_DIR/helpers/ctl_utils.sh
 redirect_output ${output_label}
