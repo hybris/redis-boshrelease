@@ -107,8 +107,8 @@ jobs:
         bosh_username: {{bosh-lite-build-username}}
         bosh_password: {{bosh-lite-build-password}}
         bosh_deployment_name: {{bosh-lite-build-deployment-name}}
-        aws_access_key_id: {{pipeline-aws-access-key-id}}
-        aws_secret_access_key: {{pipeline-aws-secret-access-key}}
+        aws_access_key_id: {{boshrelease-aws-access-key-id}}
+        aws_secret_access_key: {{boshrelease-aws-secret-access-key}}
         promotion_branch: master
   - put: git-redis-boshrelease
     params:
