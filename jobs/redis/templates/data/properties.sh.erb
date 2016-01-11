@@ -14,19 +14,3 @@ export DNS_ROOT=<%= spec.dns_domain_name %>
 
 # $BIND_ADDR is the IP of the first network
 export BIND_ADDR=<%= spec.networks.send(spec.networks.methods(false).first).ip %>
-
-export SOURCE_ADDR=<%= spec.networks.marshal_dump.first[1].ip %>
-export SOURCE_IP=<%=
-  networks = spec.networks.marshal_dump
-  network = networks.find do |_name, network_spec|
-  	next unless _name == :elastic
-  	network_spec
-  end
-  if !network
-    network = spec.networks.marshal_dump.first
-  end
-  if !network
-      raise "Could not determine elastic IP via network spec: #{networks}"
-  end
-  network[1].ip
-%>

@@ -12,7 +12,13 @@ update:
   update_watch_time: 1000-30000
 
 jobs:
-  - name: redis
+  - name: redis-master
+    networks:
+      - name: redis1
+        static_ips:
+          - 10.244.28.2
+
+  - name: redis-slave
     networks:
       - name: redis1
 
@@ -38,12 +44,6 @@ networks:
     static:
     - 10.244.28.2
 
-  - cloud_properties:
-      name: random
-    range: 10.244.28.4/30
-    reserved:
-    - 10.244.28.5
-    static: []
   - cloud_properties:
       name: random
     range: 10.244.28.8/30

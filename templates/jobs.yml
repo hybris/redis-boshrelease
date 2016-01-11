@@ -9,15 +9,37 @@ update:
   serial: false
 
 jobs:
-  - name: redis
+  - name: redis-master
     templates:
     - name: redis
+      release: redis
+    - name: sentinel
       release: redis
     instances: 1
     persistent_disk: 0
     resource_pool: small_z1
     networks: (( merge ))
-    properties: {}
+    properties:
+      sentinel:
+        masters:
+           - 'redis1 10.244.28.2 6379'
+
+  - name: redis-slave
+    templates:
+    - name: redis
+      release: redis
+    - name: sentinel
+      release: redis
+    instances: 1
+    persistent_disk: 0
+    resource_pool: small_z1
+    networks: (( merge ))
+    properties:
+      redis:
+        master: 10.244.28.2
+      sentinel:
+        masters:
+           - 'redis1 10.244.28.2 6379'
 
 networks: (( merge ))
 

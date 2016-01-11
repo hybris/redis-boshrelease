@@ -81,15 +81,8 @@ PIDFILE=$RUN_DIR/$JOB_NAME.pid
 echo '$PATH' $PATH
 
 #### fix file permission to allow Redis rewriting configuration
-chmod 666 $JOB_DIR/config/redis.conf
+chmod 664 $JOB_DIR/config/redis.conf
 if [ ! -f $JOB_DIR/config/nodes.conf ]; then
   echo "" > $JOB_DIR/config/nodes.conf
 fi
-chmod 666 $JOB_DIR/config/nodes.conf
-
-#### apply SNAT rules
-# source/destination NAT with net filter (SNAT)
-export natRule=`iptables -t nat --list-rules | grep $SOURCE_IP`
-if [ "$natRule" == "" ]; then
-  iptables -t nat -A POSTROUTING -s $SOURCE_ADDR -j SNAT --to-source $SOURCE_IP
-fi
+chmod 664 $JOB_DIR/config/nodes.conf
