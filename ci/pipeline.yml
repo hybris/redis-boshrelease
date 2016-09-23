@@ -109,8 +109,10 @@ jobs:
       platform: linux
       image: {{docker-hub-task-image}}
       inputs:
-      - {name: boshrelease, path: redis-boshrelease}
-      - {name: version}
+        - {name: boshrelease, path: redis-boshrelease}
+        - {name: version}
+      outputs:
+        - {name: create-final-release, path: output}
       run:
         path: ./redis-boshrelease/ci/scripts/shipit.sh
         args: []
@@ -123,6 +125,7 @@ jobs:
         aws_access_key_id: {{boshrelease-aws-access-key-id}}
         aws_secret_access_key: {{boshrelease-aws-secret-access-key}}
         promotion_branch: master
+        output_dir: ../output/redis-boshrelease
   - put: git-redis-boshrelease
     params:
       repository: create-final-release/redis-boshrelease

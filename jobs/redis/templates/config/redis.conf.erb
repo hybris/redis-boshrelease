@@ -71,7 +71,7 @@ tcp-backlog <%= p("redis.tcp-backlog").to_i %>
 # unixsocketperm 700
 
 # Close the connection after a client is idle for N seconds (0 to disable)
-timeout 0
+timeout <%= p("redis.timeout").to_i %>
 
 # TCP keepalive.
 #

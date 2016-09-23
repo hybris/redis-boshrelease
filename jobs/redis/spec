@@ -19,6 +19,9 @@ properties:
   redis.tcp-backlog:
     description:
     default: 511
+  redis.timeout:
+    description: Close the connection after a client is idle for N seconds (0 to disable)
+    default: 60
   redis.port:
     description: Port to listen for requests to redis server
     default: 6379
